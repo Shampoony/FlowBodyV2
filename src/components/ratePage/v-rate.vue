@@ -22,7 +22,7 @@
                 <div class="rate__inner">
                   <div class="rate__wave-top">
                     <div class="rate__image">
-                      <img src="/src/assets/images/dumbell.svg" alt="" />
+                      <img :src="rate.svg" alt="" />
                     </div>
                     <svg
                       viewBox="0 0 100 60"
@@ -67,23 +67,30 @@ import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import vFooter from '@/components/generalComponents/v-footer.vue'
 
+import dumbell1 from '@/assets/images/dumbell.svg'
+import dumbell2 from '@/assets/images/dumbell2.svg'
+import dumbell3 from '@/assets/images/dumbell3.svg'
+
 const selectedRate = ref(null)
 
 const rates = ref([
   {
     id: 1,
+    svg: dumbell1,
     title: 'Базовый',
     price: '20$',
     features: ['1 месяц доступ', 'План тренировок', 'План питания', 'Анализ результатов'],
   },
   {
     id: 2,
+    svg: dumbell2,
     title: 'Стандарт',
     price: '35$',
     features: ['1 месяц доступ', 'План тренировок', 'План питания', 'Анализ результатов'],
   },
   {
     id: 3,
+    svg: dumbell3,
     title: 'Премиум',
     price: '50$',
     features: ['1 месяц доступ', 'План тренировок', 'План питания', 'Анализ результатов'],
