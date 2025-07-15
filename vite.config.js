@@ -16,5 +16,4 @@ export default defineConfig({
       external: ['vue-router'],
     },
   },
-  base: '/flowBody/', // Замените на имя вашего репозитория
 })
