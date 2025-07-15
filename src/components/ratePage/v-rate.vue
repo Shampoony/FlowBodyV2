@@ -25,7 +25,7 @@
                 <div class="rate__inner">
                   <div class="rate__wave-top">
                     <div class="rate__image">
-                      <img :src="rate.icon" alt="" />
+                      <img src="/src/assets/images/dumbell.svg" alt="" />
                     </div>
                     <svg
                       viewBox="0 0 100 60"
@@ -77,21 +77,18 @@ const rates = ref([
     id: 1,
     title: 'Базовый',
     price: '20$',
-    icon: '/src/assets/images/dumbell.svg',
     features: ['1 месяц доступ', 'План тренировок', 'План питания', 'Анализ результатов'],
   },
   {
     id: 2,
     title: 'Стандарт',
     price: '35$',
-    icon: '/src/assets/images/dumbell.svg',
     features: ['1 месяц доступ', 'План тренировок', 'План питания', 'Анализ результатов'],
   },
   {
     id: 3,
     title: 'Премиум',
     price: '50$',
-    icon: '/src/assets/images/dumbell.svg',
     features: ['1 месяц доступ', 'План тренировок', 'План питания', 'Анализ результатов'],
   },
 ])
