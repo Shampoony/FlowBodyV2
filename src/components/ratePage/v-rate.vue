@@ -14,14 +14,11 @@
             :centeredSlides="true"
             :initialSlide="0"
             :loop="false"
+            @swiper="onSwiperInit"
+            @slideChange="onSlideChange"
           >
-            <SwiperSlide
-              v-for="rate in rates"
-              :key="rate.id"
-              class="v-rate__list-item"
-              @click="selectRate(rate.id)"
-            >
-              <div class="rate" :class="{ selected: selectedRate === rate.id }">
+            <SwiperSlide v-for="(rate, index) in rates" :key="rate.id" class="v-rate__list-item">
+              <div class="rate" :class="{ selected: activeIndex === index }">
                 <div class="rate__inner">
                   <div class="rate__wave-top">
                     <div class="rate__image">
@@ -50,7 +47,7 @@
                       </li>
                     </ul>
                     <button class="rate__button">
-                      {{ selectedRate === rate.id ? 'Выбран' : 'Купить' }}
+                      {{ activeIndex === index ? 'Выбран' : 'Купить' }}
                     </button>
                   </div>
                 </div>
@@ -93,7 +90,17 @@ const rates = ref([
   },
 ])
 
-const selectRate = (rateId) => {
-  selectedRate.value = rateId
+const activeIndex = ref(0)
+const swiperRef = ref(null)
+
+const onSwiperInit = (swiper) => {
+  swiperRef.value = swiper
+  activeIndex.value = swiper.realIndex
+}
+
+const onSlideChange = () => {
+  if (swiperRef.value) {
+    activeIndex.value = swiperRef.value.realIndex
+  }
 }
 </script>
