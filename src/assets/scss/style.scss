@@ -77,7 +77,13 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   position: relative;
   width: 250px;
-  height: 403px;
+  height: 440px;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+
+  &.selected {
+    transform: scale(1);
+  }
 
   &__wave-top {
     position: relative;
@@ -90,117 +96,7 @@ footer {
 
     svg {
       position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      display: block;
-    }
-  }
-
-  &__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -40%);
-    width: 50px;
-    height: 30px;
-    background: white;
-    border-radius: 8px;
-    z-index: 2;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      width: 8px;
-      height: 8px;
-      background: #00e5c0;
-      border-radius: 50%;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      width: 8px;
-      height: 8px;
-      background: #00e5c0;
-      border-radius: 50%;
-    }
-  }
-
-  &__list {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: start;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__title {
-    font-size: 22px;
-    margin: 16px 0 8px;
-  }
-
-  &__price {
-    color: #00e5c0;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-
-  &__subtitle {
-    font-size: 14px;
-    margin-bottom: 6px;
-    color: #ddd;
-  }
-
-  &__button {
-    width: calc(100% - 40px);
-    margin-top: 16px;
-    background: #00e5c0;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #000;
-    transition: background 0.3s;
-
-    &:hover {
-      background: #00c7a6;
-    }
-  }
-}
-.rate {
-  background: #2a2a2a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 16px;
-  overflow: hidden;
-  text-align: center;
-  color: #ffffff;
-  padding: 0 0 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  width: 250px;
-  height: 420px;
-
-  &__wave-top {
-    width: 100%;
-    height: 70px;
-    background: #00e5c0;
-    display: flex;
-    justify-content: center;
-
-    svg {
-      position: absolute;
-      top: 98%;
+      top: 99%;
       left: 0;
       width: 100%;
       height: 60px;
@@ -257,6 +153,7 @@ footer {
   &__button {
     width: 178px;
     margin-top: 16px;
+    margin-bottom: 16px;
     background: #00e5c0;
     border: none;
     padding: 9px 24px;
