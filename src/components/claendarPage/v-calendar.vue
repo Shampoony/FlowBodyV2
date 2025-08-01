@@ -27,10 +27,12 @@
             }"
             @click="selectDay(day)"
           >
-            <span class="v-calendar__day-number" :class="{ locked: day.isLocked }">{{
-              day.dayNumber
-            }}</span>
-            <div v-if="day.isLocked" class="v-calendar__lock">
+            <span
+              class="v-calendar__day-number"
+              :class="{ locked: day.isLocked || day.isOtherMonth }"
+              >{{ day.dayNumber }}</span
+            >
+            <div v-if="day.isLocked || day.isOtherMonth" class="v-calendar__lock">
               <img src="/src/assets/images/loock.svg" alt="" />
             </div>
           </div>
